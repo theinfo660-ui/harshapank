@@ -1,280 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1309145134502335');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1309145134502335&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trade Finder</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero to Hero</title>
+    <!-- Font Awesome Icons for professional visuals -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+        body {
+            background: #0f0c1b; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-<style>
+        /* Main Container Card - Matches your screenshot layout exactly */
+        .card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 430px; /* Perfect, premium sizing for all mobile viewports */
+            border-radius: 30px;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
 
-:root {
-  --bg: linear-gradient(135deg, #020617, #0f172a);
-  --green: #00ff9d;
-  --green2: #00ffa6;
-  --card: rgba(255,255,255,0.05);
-}
+        /* 1. Profile Round Image Container (Compact & Sharp) */
+        .profile-round-container {
+            width: 85px; /* Attractive, optimal circle size matching the original asset */
+            height: 85px;
+            margin: 5px auto 15px auto;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            background: #111e3d; /* Fallback dark background */
+        }
 
-* {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins', sans-serif;
-}
+        .profile-round-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Keeps the profile image crisp and perfectly centered */
+        }
 
-body {
-  background: var(--bg);
-  color:white;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  min-height:100vh;
-  padding:20px;
-}
+        /* Typography & Header styling */
+        .main-title {
+            color: #5856d6;
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
 
-.container {
-  max-width:420px;
-  width:100%;
-}
+        .stats-line {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 22px;
+            flex-wrap: wrap;
+        }
 
-/* CARD */
-.card {
-  background: var(--card);
-  backdrop-filter: blur(15px);
-  border-radius:20px;
-  padding:25px;
-  text-align:center;
-  box-shadow: 0 0 25px rgba(0,255,157,0.1);
-  animation: fadeUp 1s ease;
-}
+        .stats-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
 
-/* IMAGE */
-.profile {
-  width:120px;
-  height:120px;
-  border-radius:20px;
-  object-fit:cover;
-  border:3px solid var(--green);
-  box-shadow: 0 0 15px var(--green);
-  margin-bottom:10px;
-}
+        .stats-item.members { color: #2ecc71; font-weight: 600; }
+        .stats-item.signals { color: #3498db; font-weight: 600; }
 
-/* 🔥 LIVE DOT */
-.live-status {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:8px;
-  margin-bottom:10px;
-  font-size:13px;
-}
+        /* Telegram Direct Action Button */
+        .tg-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #5b62f4, #8340f1);
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 15px;
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(91, 98, 244, 0.35);
+            transition: transform 0.2s;
+        }
 
-.dot {
-  width:10px;
-  height:10px;
-  background:#00ff9d;
-  border-radius:50%;
-  box-shadow:0 0 10px #00ff9d;
-  animation:pulse 1.5s infinite;
-}
+        .tg-btn:active {
+            transform: scale(0.97);
+        }
 
-@keyframes pulse {
-  0% { transform:scale(1); opacity:1; }
-  50% { transform:scale(1.5); opacity:0.6; }
-  100% { transform:scale(1); opacity:1; }
-}
+        /* Features List block spacing */
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
 
-/* TITLE */
-.title {
-  color: var(--green);
-  font-weight:700;
-  font-size:24px;
-}
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: #f8f9fe;
+            border: 1px solid #edf0f9;
+            padding: 14px 16px;
+            border-radius: 15px;
+            text-align: left;
+        }
 
-/* BADGE */
-.badge {
-  display:inline-block;
-  padding:6px 15px;
-  background: rgba(0,255,157,0.1);
-  border-radius:20px;
-  margin:10px 0;
-}
+        .feature-icon {
+            width: 34px;
+            height: 34px;
+            background: #eceaff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #5856d6;
+            font-size: 15px;
+            flex-shrink: 0;
+        }
 
-/* SMALL BUTTONS */
-.small-btns {
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin-top:10px;
-}
+        .feature-text {
+            color: #333333;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.4;
+        }
 
-.small-btn {
-  padding:6px 12px;
-  border-radius:20px;
-  background: rgba(255,255,255,0.08);
-  font-size:12px;
-}
+        /* Banner styling */
+        .free-banner {
+            background: #f0edff;
+            border: 1px dashed #c0b3ff;
+            border-radius: 15px;
+            padding: 12px;
+            font-size: 13px;
+            color: #5856d6;
+            margin-bottom: 20px;
+        }
 
-/* COUNTER */
-.counter {
-  margin-top:12px;
-  font-size:14px;
-  color:#00ff9d;
-  font-weight:600;
-  text-shadow:0 0 10px #00ff9d;
-}
+        .free-banner strong {
+            color: #d63031;
+        }
 
-/* BUTTON */
-.main-btn {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  width:100%;
-  margin:20px 0;
-  padding:15px;
-  border-radius:50px;
-  background: linear-gradient(90deg, var(--green), var(--green2));
-  color:black;
-  font-weight:600;
-  text-decoration:none;
-  transition:0.3s;
-  box-shadow:0 0 20px rgba(0,255,157,0.4);
-}
+        /* Footer Sponsor Section */
+        .footer-ad {
+            font-size: 12px;
+            color: #888;
+        }
 
-.main-btn:hover {
-  transform:scale(1.05);
-}
-
-/* FEATURES */
-.feature {
-  display:flex;
-  align-items:center;
-  gap:10px;
-  background: var(--card);
-  border-radius:15px;
-  padding:12px;
-  margin:10px 0;
-  border:1px solid rgba(0,255,157,0.2);
-  transition:0.3s;
-}
-
-.feature:hover {
-  transform:translateY(-5px);
-}
-
-/* CTA */
-.cta {
-  background: linear-gradient(135deg, #00ff9d, #00c97a);
-  color:black;
-  padding:20px;
-  border-radius:20px;
-  margin-top:20px;
-  text-align:center;
-  box-shadow:0 0 20px rgba(0,255,157,0.5);
-}
-
-.cta-btn {
-  display:inline-block;
-  margin-top:15px;
-  padding:12px 20px;
-  border-radius:30px;
-  background:white;
-  color:black;
-  text-decoration:none;
-  font-weight:600;
-  transition:0.3s;
-}
-
-.cta-btn:hover {
-  transform:scale(1.05);
-}
-
-@keyframes fadeUp {
-  from { opacity:0; transform:translateY(20px); }
-  to { opacity:1; transform:translateY(0); }
-}
-
-</style>
+        .footer-ad a {
+            color: #5856d6;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="container">
+    <div class="card">
+        
+        <!-- ========================================================
+             1. EDIT IMAGE HERE
+             This is your round profile area using 'logo.png'.
+             Change "logo.png" to your file pathway if needed.
+             ======================================================== -->
+        <div class="profile-round-container">
+            <img src="logo.png" alt="Profile Image">
+        </div>
 
-  <div class="card">
+        <!-- ========================================================
+             2. EDIT MAIN NAME HERE
+             Replace "Zero to Hero" with your custom channel/brand name.
+             ======================================================== -->
+        <h1 class="main-title">Zero to Hero</h1>
 
-    <!-- IMAGE -->
-    <img src="logo.png" class="profile">
+        <!-- Configuration for counts -->
+        <div class="stats-line">
+            <div class="stats-item members">
+                <i class="fa-solid fa-users"></i> 45,031+ Active Members
+            </div>
+            <div class="stats-item">•</div>
+            <div class="stats-item signals">
+                <i class="fa-solid fa-chart-line"></i> Live Signals
+            </div>
+        </div>
 
-    <!-- 🔥 LIVE STATUS -->
-    <div class="live-status">
-      <div class="dot"></div>
-      <span>Live Now</span>
+        <!-- ========================================================
+             3. EDIT TELEGRAM LINK HERE
+             Replace "#" with your valid Telegram community channel link.
+             Example: href="https://t.me"
+             ======================================================== -->
+        <a href="#" class="tg-btn">
+            <i class="fa-brands fa-telegram"></i> Join Telegram Channel 🚀
+        </a>
+
+        <!-- Feature Layout List -->
+        <div class="features-list">
+            
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fa-solid fa-bullseye"></i></div>
+                <div class="feature-text">Nifty & BankNifty levels & Stock option calls</div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fa-solid fa-shield"></i></div>
+                <div class="feature-text">Daily 4-5 zero hero trade with 95% accuracy</div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+                <div class="feature-text">Real-time Alerts on Telegram</div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fa-solid fa-headset"></i></div>
+                <div class="feature-text">24/7 Support & Guidance</div>
+            </div>
+
+        </div>
+
+        <!-- Pricing Highlight Overlay -->
+        <div class="free-banner">
+            🎯 <strong>100% Free</strong> • Daily accurate signals • No hidden charges
+        </div>
+
+        <!-- ========================================================
+             4. EDIT SNOW ADS AGENCY LINK HERE
+             Replace the first "#" link with your Agency landing url.
+             Replace the second "#" link with your setup/contact url.
+             ======================================================== -->
+        <div class="footer-ad">
+            📢 Ad by <a href="#">Snow Ads Agency</a> • <a href="#">Setup your ad →</a>
+        </div>
+
     </div>
-
-    <!-- TITLE -->
-    <div class="title">Pankaj Bhardwaj 💰💰( trading company channel )</div>
-
-    <!-- NAME -->
-    <div class="badge">👤 Snow </div>
-
-    <div>✓ Trusted by thousands of traders</div>
-
-    <div class="small-btns">
-      <div class="small-btn">24/7 Updates</div>
-      <div class="small-btn">Free to Join</div>
-    </div>
-
-    <!-- COUNTER -->
-    <div class="counter">
-      🔥 <span id="count">1243</span> people joined today
-    </div>
-
-  </div>
-
-  <!-- BUTTON -->
-  <a href="https://t.me/+yTjvHx90_4s2M2Yx" class="main-btn">Join on Telegram</a>
-
-  <!-- FEATURES -->
-  <div class="feature">📊 <div>Market Insights & Analysis</div></div>
-  <div class="feature">📚 <div>Learn Trading</div></div>
-  <div class="feature">⚡ <div>Tips & Tricks</div></div>
-
-  <!-- CTA -->
-  <div class="cta">
-    ⭐ Stay Ahead with Knowledge ⭐<br>
-    Join now and never miss profitable updates 🚀
-    <br>
-    <a href="https://t.me/+yTjvHx90_4s2M2Yx" class="cta-btn">🚀 Join Telegram Channel</a>
-  </div>
-
-</div>
-
-<script>
-let count = 1243;
-setInterval(() => {
-  count += Math.floor(Math.random() * 3) + 1;
-  document.getElementById("count").innerText = count;
-}, 2000);
-</script>
 
 </body>
 </html>

@@ -1,272 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2652042525198595');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2652042525198595&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hero</title>
-    <!-- Font Awesome Icons for professional visuals -->
-    <link rel="stylesheet" href="https://cloudflare.com">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            background: #0f0c1b; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
+<title>Free Telegram Trading Community</title>
 
-        /* Main Container Card - Matches your screenshot layout exactly */
-        .card {
-            background: #ffffff;
-            width: 100%;
-            max-width: 430px; /* Perfect, premium sizing for all mobile viewports */
-            border-radius: 30px;
-            padding: 25px 20px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-        /* 1. Profile Round Image Container (Compact & Sharp) */
-        .profile-round-container {
-            width: 85px; /* Attractive, optimal circle size matching the original asset */
-            height: 85px;
-            margin: 5px auto 15px auto;
-            border-radius: 50%;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            background: #111e3d; /* Fallback dark background */
-        }
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+body{
+background:#090909;
+color:#fff;
+overflow-x:hidden;
+}
+.bg-animation{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at top,#FFD70022,transparent 35%),
+radial-gradient(circle at bottom,#00ff8822,transparent 35%),
+#090909;
+z-index:-1;
+}
+.top-btn{
+padding:20px;
+text-align:center;
+}
+.top-btn a,.join,.sticky a{
+display:block;
+max-width:420px;
+margin:auto;
+padding:18px;
+border-radius:50px;
+text-decoration:none;
+font-weight:700;
+background:linear-gradient(90deg,#FFD700,#ff9800);
+color:#000;
+}
+.hero{
+padding:30px 20px;
+text-align:center;
+}
+.profile{
+width:180px;
+height:180px;
+border-radius:50%;
+border:5px solid #FFD700;
+object-fit:cover;
+}
+.verified{
+display:inline-block;
+margin:15px 0;
+padding:8px 20px;
+border:1px solid #FFD700;
+border-radius:50px;
+color:#FFD700;
+}
+.stats{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin:35px 0;
+}
+.stats div{
+background:#141414;
+padding:20px;
+border-radius:15px;
+width:110px;
+}
+.features,.risk{
+padding:60px 20px;
+text-align:center;
+}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+max-width:1100px;
+margin:auto;
+}
+.card{
+background:#141414;
+padding:25px;
+border-radius:15px;
+}.risk{
+background:#111;
+}
 
-        .profile-round-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Keeps the profile image crisp and perfectly centered */
-        }
+.sticky{
+position:fixed;
+left:0;
+bottom:0;
+width:100%;
+padding:15px;
+background:#000;
+z-index:999;
+}
 
-        /* Typography & Header styling */
-        .main-title {
-            color: #5856d6;
-            font-size: 26px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
+footer{
+padding:35px 20px 110px;
+text-align:center;
+color:#999;
+}
 
-        .stats-line {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 12px;
-            font-size: 13px;
-            color: #666;
-            margin-bottom: 22px;
-            flex-wrap: wrap;
-        }
+footer a{
+color:#FFD700;
+text-decoration:none;
+font-weight:700;
+}
 
-        .stats-item {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
+footer a:hover{
+text-decoration:underline;
+}
 
-        .stats-item.members { color: #2ecc71; font-weight: 600; }
-        .stats-item.signals { color: #3498db; font-weight: 600; }
+.hidden{
+opacity:0;
+transform:translateY(60px);
+transition:.8s;
+}
 
-        /* Telegram Direct Action Button */
-        .tg-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: linear-gradient(135deg, #5b62f4, #8340f1);
-            color: white;
-            text-decoration: none;
-            padding: 15px;
-            border-radius: 15px;
-            font-size: 17px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(91, 98, 244, 0.35);
-            transition: transform 0.2s;
-        }
+.show{
+opacity:1;
+transform:translateY(0);
+}
 
-        .tg-btn:active {
-            transform: scale(0.97);
-        }
+@media(max-width:768px){
 
-        /* Features List block spacing */
-        .features-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-bottom: 20px;
-        }
+.hero h1{
+font-size:30px;
+}
 
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            background: #f8f9fe;
-            border: 1px solid #edf0f9;
-            padding: 14px 16px;
-            border-radius: 15px;
-            text-align: left;
-        }
+.hero p{
+font-size:15px;
+}
 
-        .feature-icon {
-            width: 34px;
-            height: 34px;
-            background: #eceaff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #5856d6;
-            font-size: 15px;
-            flex-shrink: 0;
-        }
+.profile{
+width:140px;
+height:140px;
+}
 
-        .feature-text {
-            color: #333333;
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 1.4;
-        }
+.top-btn a,
+.join,
+.sticky a{
+font-size:17px;
+padding:15px;
+}
 
-        /* Banner styling */
-        .free-banner {
-            background: #f0edff;
-            border: 1px dashed #c0b3ff;
-            border-radius: 15px;
-            padding: 12px;
-            font-size: 13px;
-            color: #5856d6;
-            margin-bottom: 20px;
-        }
+.features h2,
+.risk h2{
+font-size:28px;
+}
 
-        .free-banner strong {
-            color: #d63031;
-        }
+.stats{
+gap:12px;
+}
 
-        /* Footer Sponsor Section */
-        .footer-ad {
-            font-size: 12px;
-            color: #888;
-        }
+.stats div{
+width:95px;
+padding:15px;
+}
 
-        .footer-ad a {
-            color: #5856d6;
-            text-decoration: none;
-            font-weight: 600;
-        }
-    </style>
+}
+</style>
+
 </head>
 <body>
 
-    <div class="card">
-        
-        <!-- ========================================================
-             1. EDIT IMAGE HERE
-             This is your round profile area using 'logo.png'.
-             Change "logo.png" to your file pathway if needed.
-             ======================================================== -->
-        <div class="profile-round-container">
-            <img src="logo.png" alt="Profile Image">
-        </div>
+<div class="bg-animation"></div>
 
-        <!-- ========================================================
-             2. EDIT MAIN NAME HERE
-             Replace "Zero to Hero" with your custom channel/brand name.
-             ======================================================== -->
-        <h1 class="main-title">King Of Nifty</h1>
+<div class="top-btn">
+<a href="https://t.me/+LS0QvSe7sQ4wMmFl" target="_blank">
+🚀 JOIN FREE TELEGRAM CHANNEL
+</a>
+</div>
 
-        <!-- Configuration for counts -->
-        <div class="stats-line">
-            <div class="stats-item members">
-                <i class="fa-solid fa-users"></i> 45,031+ Active Members
-            </div>
-            <div class="stats-item">•</div>
-            <div class="stats-item signals">
-                <i class="fa-solid fa-chart-line"></i> Live Signals
-            </div>
-        </div>
+<section class="hero">
 
-        <!-- ========================================================
-             3. EDIT TELEGRAM LINK HERE
-             Replace "#" with your valid Telegram community channel link.
-             Example: href="https://t.me"
-             ======================================================== -->
-        <a href="https://t.me/+T-PrgoDazPs2ZmQ1" class="tg-btn">
-            <i class="fa-brands fa-telegram"></i> Join Telegram Channel 🚀
-        </a>
+<img src="BADSHA.JPG.JPG" class="profile" alt="Baadshah Broking">
 
-        <!-- Feature Layout List -->
-        <div class="features-list">
-            
-            <div class="feature-item">
-                <div class="feature-icon"><i class="fa-solid fa-bullseye"></i></div>
-                <div class="feature-text">Nifty & BankNifty levels & Stock option calls</div>
-            </div>
+<h1>Baadshah Broking™ (ORIGINAL)</h1>
 
-            <div class="feature-item">
-                <div class="feature-icon"><i class="fa-solid fa-shield"></i></div>
-                <div class="feature-text">Daily 4-5 zero hero trade with 95% accuracy</div>
-            </div>
+<div class="verified">
+⭐ Trusted Trading Community
+</div>
 
-            <div class="feature-item">
-                <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
-                <div class="feature-text">Real-time Alerts on Telegram</div>
-            </div>
+<p>
+Join India's Fast Growing Telegram Community for Educational Market Analysis, Learning Resources & Daily Updates.
+</p>
 
-            <div class="feature-item">
-                <div class="feature-icon"><i class="fa-solid fa-headset"></i></div>
-                <div class="feature-text">24/7 Support & Guidance</div>
-            </div>
+<div class="stats">
+<div>
+<h2>10K+</h2>
+<span>Members</span>
+</div>
 
-        </div>
+<div>
+<h2>4.9★</h2>
+<span>Rating</span>
+</div>
 
-        <!-- Pricing Highlight Overlay -->
-        <div class="free-banner">
-            🎯 <strong>100% Free</strong> • Daily accurate signals • No hidden charges
-        </div>
+<div>
+<h2>Daily</h2>
+<span>Updates</span>
+</div>
+</div>
 
-        <!-- ========================================================
-             4. EDIT SNOW ADS AGENCY LINK HERE
-             Replace the first "#" link with your Agency landing url.
-             Replace the second "#" link with your setup/contact url.
-             ======================================================== -->
-        <div class="footer-ad">
-            📢 Ad by <a href="https://t.me/+cvb_x5G0F5MwY2Fl">Snow Ads Agency</a> • <a href="https://t.me/+cvb_x5G0F5MwY2Fl">Setup your ad →</a>
-        </div>
+<a class="join" href="https://t.me/+LS0QvSe7sQ4wMmFl" target="_blank">
+Join Telegram Now 🚀
+</a>
 
-    </div>
+</section>
 
-</body>
-</html>
+<section class="features">
+<h2>Why Join Us?</h2>
+
+<div class="grid">
+
+<div class="card">
+📊
+<h3>Market Analysis</h3>
+<p>Educational charts & market insights.</p>
+</div>
+
+<div class="card">
+📈
+<h3>Daily Updates</h3>
+<p>Regular market news and learning content.</p>
+</div><div class="card">
+⚡
+<h3>Fast Alerts</h3>
+<p>Stay informed with timely educational updates.</p>
+</div>
+
+<div class="card">
+🎯
+<h3>Trading Education</h3>
+<p>Learn trading concepts and strategies.</p>
+</div>
+
+</div>
+</section>
+
+<section class="risk">
+<h2>Risk Disclaimer</h2>
+<p>
+Trading and investing involve risk. This Telegram community shares educational information only and does not provide personalized financial advice.
+</p>
+</section>
+
+<div class="sticky">
+<a href="https://t.me/+LS0QvSe7sQ4wMmFl" target="_blank">
+JOIN FREE TELEGRAM 🚀
+</a>
+</div>
+
+<footer>
+Ads Managed By
+<a href="https://t.me/+-HYxd1wYkMkzYzI1" target="_blank">
+MaxJohn Ad Agency
+</a>
+</footer>
